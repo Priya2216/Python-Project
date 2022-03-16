@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+  
+  <title>Health Insurance</title>
+  
+</head>
+   <style>
+        body { background-color:pink;
+            }        
+   </style>
+  
+   <h1 style="color:darkblue;">Health Insurance Predictor</h1>
+        <style>
+            div { background-color: lightgrey;
+                  width: 300px;
+                  border: 5px solid green;
+                  padding: 50px;
+                  margin: 20px;
+               }
+         </style>   
+      <div>
+    
+    <form action="{{ url_for('predict')}}" method="post">
+      
+      <label for="age" colo>Age:  </label>
+      <input type="text" name="age" placeholder="age" required="required">
+      <br>
+      
+      <br>
+      <label for="bmi">BMI:  </label>
+      <input type="text" name="bmi" placeholder="bmi" required="required">
+      <br>
+      
+      <br>
+      <label for="children">Children:  </label>
+      <select id="children" name="children", placeholder="children", required="required">
+        <option value="0">Not Applicable</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 & above</option>
+      </select>
+      <br>
+      
+      <br>
+      <label for="Sex">Sex:  </label>
+      <select id="Sex" name="Sex" placeholder="Sex", required="required">
+        <option value="0">Male</option>
+        <option value="1">Female</option>
+      </select>
+      <br>
+      
+      <br>
+      <label for="Smoker">Smoker:  </label>
+      <select id="Smoker" name="Smoker", placeholder="Smoker", required="required">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+      <br>
+      
+      <br>
+      <label for="Region">Region:  </label>
+      <select id="Region" name="Region", placeholder="Region", required="required">
+        <option value="0">Northeast</option>
+        <option value="1">Northwest</option>
+        <option value="2">Southeast</option>
+        <option value="3">Southwest</option>
+      </select>
+      <br>
+      
+      <br>
+       <label for="Charges" colo>Charges:  </label>
+      <input type="text" name="Charges" placeholder="Charges" required="required">
+      <br>
+      
+      <br>
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict Medical Insurance</button>
+    </form>
+    <br>
+    
+    <br>
+    <h2>
+    {{ prediction_text }}
+    </h2>
+  
+</body>
+</html>
